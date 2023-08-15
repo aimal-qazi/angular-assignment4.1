@@ -1,0 +1,41 @@
+<div class="container">
+  <table>
+    <thead>
+      <tr>
+        <th>Category</th>
+        <th>Name</th>
+        <th>Color</th>
+        <th>Fuel Type</th>
+        <th>Model</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let car of carsList">
+        <td>
+          {{ car.category }}
+        </td>
+        <td>
+          <p>{{ car.name }}</p>
+        </td>
+        <td>
+          <p>{{ car.color }}</p>
+        </td>
+        <td>
+          <p>{{ car.fueltype }}</p>
+        </td>
+        <td>
+          <p>{{ car.model }}</p>
+        </td>
+        <td>
+          <div class="btns">
+            <button routerLink="/vehicle/detail/{{ car.id }}">Detail</button>
+            <button routerLink="/category/{{ car.categoryId }}">
+              Category
+            </button>
+          </div>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
